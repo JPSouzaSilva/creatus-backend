@@ -55,7 +55,7 @@ Exemplo de requisição válida:
 ```json
 {
     "email" : "fulano@email.com",
-    "password" : "password",
+    "password" : "password"
 }
 ```
 
