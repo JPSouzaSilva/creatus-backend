@@ -37,7 +37,7 @@ export async function updateUser(request: FastifyRequest, reply: FastifyReply) {
       level,
     })
 
-    reply.status(200).send({ user })
+    reply.status(200).send(user)
   } catch (error) {
     if (error instanceof UserNotFoundError) {
       reply.status(404).send({ message: error.message })

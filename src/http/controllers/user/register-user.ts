@@ -32,7 +32,7 @@ export async function registerUser(
       level,
     })
 
-    reply.status(201).send({ user })
+    reply.status(201).send(user)
   } catch (error) {
     if (error instanceof EmailAlreadyExistError) {
       reply.status(409).send({ message: error.message })

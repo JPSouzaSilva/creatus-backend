@@ -15,7 +15,7 @@ export async function getUser(request: FastifyRequest, reply: FastifyReply) {
 
     const { user } = await getUserUseCase.execute({ id })
 
-    reply.status(200).send({ user })
+    reply.status(200).send(user)
   } catch (error) {
     if (error instanceof UserNotFoundError) {
       reply.status(404).send({ message: error.message })
