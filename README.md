@@ -76,10 +76,21 @@ Caso a requisição for válida, ela retornara status code 201, juntamente com a
 Exemplo de requisição válida:
 ```json
 {
-    "name" : "fulano",
-    "email" : "fulano@email.com",
-    "password" : "password",
-    "level" : 3
+  "name" : "fulano",
+  "email" : "fulano@email.com",
+  "password" : "password",
+  "level" : 3
+}
+```
+
+Exemplo de resposta:
+```json
+{
+    "id": "669250adcba8efe19f8c9102",
+    "name": "fulano",
+    "email": "fulano@email.com",
+    "password": "password",
+    "level": 3
 }
 ```
 
@@ -88,11 +99,42 @@ Exemplo de requisição válida:
 
 Esse endpoint retorna uma lista com as informações de todos os usuários cadastrados na aplicação, juntamente com status code 200. Caso nenhum usuário tenha sido cadastrado, retornara uma lista vazia.
 
+Exemplo de Resposta:
+```json
+[
+  {
+    "id": "669250adcba8efe19f8c9102",
+    "name": "fulano",
+    "email": "fulano@email.com",
+    "password": "password",
+    "level": 3
+  },
+  {
+    "id": "66925126cba8efe19f8c9103",
+    "name": "fulano2",
+    "email": "fulan2o@email.com",
+    "password": "password2",
+    "level": 4
+  }
+]
+```
+
 
 ### Detalhes de um usuário específico
 `GET /users/:id`
 
 Esse endpoint retorna dados especifico de um usuário cadastrado na aplicação, cujo o id do mesmo foi informado na url da requisição, juntamente com status code 200. Caso não encontre um usuário com id informado, retornara status code 404 junto da mensagem de erro.
+
+Exemplo de resposta:
+```json
+{
+    "id": "669250adcba8efe19f8c9102",
+    "name": "fulano",
+    "email": "fulano@email.com",
+    "password": "password",
+    "level": 3
+}
+```
 
 
 ### Atualização de um usuário específico
@@ -116,6 +158,17 @@ Exemplo de requisição válida:
     "email" : "fulano@email.com",
     "password" : "password",
     "level" : 3
+}
+```
+
+Exemplo de resposta:
+```json
+{
+    "id": "669250adcba8efe19f8c9102",
+    "name": "fulano",
+    "email": "fulano@email.com",
+    "password": "password",
+    "level": 3
 }
 ```
 
