@@ -6,8 +6,7 @@ import { getUser } from './controllers/user/get-user'
 import { updateUser } from './controllers/user/update-user'
 import { deleteUser } from './controllers/user/delete-user'
 import { reportGeneration } from './controllers/user/report-generation'
-import { onlyLevelFourPlus } from './middlewares/level-four-plus'
-import { authUser } from './middlewares/authentication'
+import { levelPermission } from './middlewares/level-permission'
 
 export async function appRoutes(app: FastifyInstance) {
   app.post('/login', authenticateUser)
@@ -18,7 +17,7 @@ export async function appRoutes(app: FastifyInstance) {
   app.delete('/users/:id', deleteUser)
   app.get(
     '/users/report',
-    { onRequest: [authUser, onlyLevelFourPlus] },
+    { onRequest: [levelPermission(4)] },
     reportGeneration,
   )
 }
