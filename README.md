@@ -1,6 +1,6 @@
 # Processo Seletivo Creatus - Backend
 
-Nesse repositório se encontra a teste técnico para a empresa Creatus.
+Nesse repositório se encontra a teste técnico para a empresa Creatus. Desenvolvido por João Pedro Souza da Silva 
 
 ## Descrição da API
 
@@ -20,6 +20,12 @@ docker compose build
 
 ```bash
 docker compose up -d
+```
+
+- Depois de usar a aplicação, você pode derrubar o container do Docker com o comando:
+
+```bash
+docker compose down
 ```
 
 ## Endpoints
