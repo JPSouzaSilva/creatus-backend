@@ -8,6 +8,20 @@ Nesse repositório se encontra a teste técnico para a empresa Creatus.
 - Foi usado o Docker, com o intuito de facilitar a criação de um ambiente comum
 - Todas informações são inseridas na API, são validadas pela biblioteca ZOD
 
+## Como rodar o projeto
+
+- Primeiro você deve criar o container do Docker, com o comando:
+
+```bash
+docker compose build
+```
+
+- Após isso, iremos subir o container recém-criado, com o comando:
+
+```bash
+docker compose up -d
+```
+
 ## Endpoints
 A API expõem 7 endpoints, são eles:
 - `POST /login` – Autenticação do usuário
@@ -75,7 +89,7 @@ Esse endpoint retorna uma lista com as informações de todos os usuários cadas
 Esse endpoint retorna dados especifico de um usuário cadastrado na aplicação, cujo o id do mesmo foi informado na url da requisição, juntamente com status code 200. Caso não encontre um usuário com id informado, retornara status code 404 junto da mensagem de erro.
 
 
-## Atualização de um usuário específico
+### Atualização de um usuário específico
 `PUT /users/:id`
 
 Esse endpoint fara alterações em um usuário especifico da aplicação, cujo o id do mesmo foi informado na url da requisição, juntamente com status code 200 e as novas informações do usuário. Caso não encontre um usuário com aquele id, retornara status code 404, junto da mensagem de erro. Caso o novo email informado já estiver em uso, retornara status code 409, junto da mensagem de erro.
@@ -90,28 +104,12 @@ Exemplo de requisição válida:
 }
 ```
 
-## Exclusão de um usuário específico
+### Exclusão de um usuário específico
 `DELETE /users/:id`
 
 Esse endpoint deletara um usuário especifico da aplicação, cujo o id do mesmo foi informado na url da requisição, juntamente com status code 204. Caso não encontre um usuário com aquele id, retornara status code 404, junto da mensagem de erro.
 
-## Geração de um relatório em CSV
+### Geração de um relatório em CSV
 `GET /users/report`
 
 Esse endpoint retornará um CSV com todos os usuários cadastrados na aplicação, juntamente com status code 200. Importante lembrar que para acessar esse endpoint precisa estar logado na aplicação e ter level 4 ou maior. Caso o usuário não esteja logado, retornara status code 401 com a mensagem de erro. Caso o usuário não tenha level 4 ou maior, retornara status code 403 com a mensagem de erro.
-
-
-## Como rodar o projeto
-
-- Primeiro você deve criar o container do Docker, com o comando:
-
-```bash
-docker compose build
-```
-
-- Após isso, iremos subir o container recém-criado, com o comando:
-
-```bash
-docker compose up -d
-```
-
