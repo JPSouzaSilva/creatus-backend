@@ -92,6 +92,15 @@ Esse endpoint retorna dados especifico de um usuário cadastrado na aplicação,
 ### Atualização de um usuário específico
 `PUT /users/:id`
 
+Deverá aceitar uma requisição em formato JSON com os seguintes parâmetros:
+
+| atributo | descrição |
+| --- | --- |
+| **name** | obrigatório, string |
+| **email** | obrigatório, único, string |
+| **password** | obrigatório, string |
+| **level** | obrigatório, number de 1 a 5 |
+
 Esse endpoint fara alterações em um usuário especifico da aplicação, cujo o id do mesmo foi informado na url da requisição, juntamente com status code 200 e as novas informações do usuário. Caso não encontre um usuário com aquele id, retornara status code 404, junto da mensagem de erro. Caso o novo email informado já estiver em uso, retornara status code 409, junto da mensagem de erro.
 
 Exemplo de requisição válida:
