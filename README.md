@@ -154,8 +154,8 @@ Esse endpoint fara alterações em um usuário especifico da aplicação, cujo o
 Exemplo de requisição válida:
 ```json
 {
-    "name" : "fulano",
-    "email" : "fulano@email.com",
+    "name" : "fulano1",
+    "email" : "fulano1@email.com",
     "password" : "password",
     "level" : 3
 }
@@ -165,10 +165,10 @@ Exemplo de resposta:
 ```json
 {
     "id": "669250adcba8efe19f8c9102",
-    "name": "fulano",
-    "email": "fulano@email.com",
-    "password": "password",
-    "level": 3
+    "name": "fulano1",
+    "email": "fulano1@email.com",
+    "password": "password1",
+    "level": 4
 }
 ```
 
