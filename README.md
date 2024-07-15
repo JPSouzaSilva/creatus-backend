@@ -192,4 +192,4 @@ Esse endpoint deletara um usuário especifico da aplicação, cujo o id do mesmo
 ### Geração de um relatório em CSV
 `GET /users/report`
 
-Esse endpoint retornará um CSV com todos os usuários cadastrados na aplicação, juntamente com status code 200. Importante lembrar que para acessar esse endpoint precisa estar logado na aplicação e ter level 4 ou maior. Caso o usuário não esteja logado, retornara status code 401 com a mensagem de erro. Caso o usuário não tenha level 4 ou maior, retornara status code 403 com a mensagem de erro.
+Esse endpoint retornará um CSV com todos os usuários cadastrados na aplicação e irá baixar o arquivo report.csv, juntamente com status code 201. Importante lembrar que para acessar esse endpoint precisa estar logado na aplicação e ter level 4 ou maior. Caso o usuário não esteja logado, retornara status code 401 com a mensagem de erro. Caso o usuário não tenha level 4 ou maior, retornara status code 403 com a mensagem de erro.
