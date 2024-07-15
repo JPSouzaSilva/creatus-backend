@@ -7,6 +7,7 @@ Nesse repositório se encontra a teste técnico para a empresa Creatus. Desenvol
 - API feita em NodeJS com o Framework Fastify, usando o ORM Prisma com o banco de dados MongoDB
 - Foi usado o Docker, com o intuito de facilitar a criação de um ambiente comum
 - Todas informações são inseridas na API, são validadas pela biblioteca ZOD
+- Foram inseridos testes unitários para todos os casos de uso, com o Vitest
 
 ## Como rodar o projeto
 
@@ -20,6 +21,17 @@ docker compose build
 
 ```bash
 docker compose up -d
+```
+
+- Caso queira apenas parar de executar o container, utilize o comando:
+
+```bash
+docker compose stop
+```
+
+- Caso queira rodar os testes unitários da aplicação, utilize o comando:
+```bash
+npm run test
 ```
 
 - Depois de usar a aplicação, você pode derrubar o container do Docker com o comando:

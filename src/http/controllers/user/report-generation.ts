@@ -13,7 +13,7 @@ export async function reportGeneration(
     reply.header('Content-Type', 'text/csv')
     reply.header('Content-Disposition', 'attachment; filename=report.csv')
 
-    reply.status(200).send(csv)
+    reply.status(201).send(csv)
   } catch (error) {
     reply.status(500).send({ message: 'Erro ao gerar relatório' })
   }
