@@ -9,12 +9,16 @@ services:
     environment:
       - NODE_ENV=dev
       - HTTP_PORT=8080
-      - DATABASE_URL=mongodb+srv://jpsouzadasilva:C4r3PsiSWhvc0t7D@creatus-database.n2n9tor.mongodb.net/creatus-database?retryWrites=true&w=majority
+      - DATABASE_URL=mongodb://mongodb:27017/creatus-database
       - JWT_SECRET=secret
     volumes:
       - .:/app
       - /app/node_modules
     depends_on:
+      - mongodb
+    networks:
+      - creatus
+    links:
       - mongodb
 
   mongodb:
@@ -23,6 +27,12 @@ services:
       - '27017:27017'
     volumes:
       - mongo-data:/data/db
+    networks:
+      - creatus
+
+networks:
+  creatus:
+    driver: bridge
 
 volumes:
   mongo-data:

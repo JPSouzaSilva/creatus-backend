@@ -12,6 +12,8 @@ export async function getAllUsers(
 
     reply.status(200).send(users)
   } catch (error) {
+    console.log(error)
+
     reply.status(500).send({ message: 'Erro ao buscar os usuários' })
   }
 }
