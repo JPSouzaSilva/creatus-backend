@@ -43,8 +43,9 @@ docker compose down
 
 Caso tenha algum problema para rodar o projeto, possa ser que o problema esteja na conexão com banco dados. Se precisar crie um cluster e coloque na DATABASE_URL do .env e do docker-compose.yml. Seguindo o exemplo do .env.example
 
+```bash
 DATABASE_URL=mongodb+srv://<username>:<password>@<database-name>.n2n9tor.mongodb.net/<database-name>?retryWrites=true&w=majority
-
+```
 
 ## Endpoints
 A API expõem 7 endpoints, são eles:
